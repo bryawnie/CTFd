@@ -58,7 +58,6 @@ PAGE = """<!doctype html>
             margin: 0 0 1.25rem;
             color: var(--accent-dark);
             font: 700 0.75rem/1.2 Arial, sans-serif;
-            letter-spacing: 0.16em;
             text-transform: uppercase;
         }
 
@@ -108,7 +107,6 @@ PAGE = """<!doctype html>
             gap: 0.5rem;
             color: var(--muted);
             font: 700 0.72rem/1.2 Arial, sans-serif;
-            letter-spacing: 0.08em;
             text-transform: uppercase;
         }
 
@@ -137,7 +135,6 @@ PAGE = """<!doctype html>
             color: #fff;
             background: var(--accent);
             font: 700 0.78rem Arial, sans-serif;
-            letter-spacing: 0.08em;
             text-transform: uppercase;
             cursor: pointer;
             transition: background 160ms ease, transform 160ms ease;
