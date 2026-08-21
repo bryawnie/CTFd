@@ -3,5 +3,5 @@ bukctf.tech {
 }
 
 secure-login.bukctf.tech {
-    reverse_proxy password-challenge:8080
+    reverse_proxy secure-login:8080
 }
