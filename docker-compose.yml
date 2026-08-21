@@ -1,4 +1,13 @@
 services:
+  password-challenge:
+    build: ./challenges/password-login
+    restart: always
+    cpus: 0.50
+    mem_limit: 128m
+    pids_limit: 64
+    networks:
+      challenge:
+
   ctfd:
     build: .
     restart: always
@@ -25,6 +34,7 @@ services:
         condition: service_started
     networks:
       default:
+      challenge:
       internal:
 
   permissions:
@@ -47,6 +57,7 @@ services:
       - caddy_config:/config
     depends_on:
       - ctfd
+      - password-challenge
 
   db:
     image: mariadb:10.11
@@ -73,6 +84,7 @@ services:
 
 networks:
   default:
+  challenge:
   internal:
     internal: true
 
