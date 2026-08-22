@@ -205,7 +205,7 @@ def find_user(username, password):
     with USERS_FILE.open(newline="") as users_file:
         for user in csv.DictReader(users_file):
             if user["username"].strip() == username.strip() and hmac.compare_digest(
-                user["password_hash"].strip(), password_hash
+                user["password_sha_256"].strip(), password_hash
             ):
                 return True
     return False
