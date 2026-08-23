@@ -117,7 +117,6 @@ if (checkout) {
         }, 0);
         if (total > state.credits) return show('No tienes suficientes créditos.', true);
         const body = { items: quantities };
-        console.log('Checkout request body:', body);
         const data = await api('/api/checkout', { method: 'POST', body: JSON.stringify(body) });
         if (data.error) return show(data.error, true);
         state.credits = data.credits;
