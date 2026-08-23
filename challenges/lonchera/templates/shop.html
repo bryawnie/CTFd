@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Lonchera | Mercado de recreo</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='lonchera.css') }}"
+    />
+  </head>
+  <body class="shop-page">
+    <main>
+      <header class="topbar">
+        <div class="brand">lon<span>chera</span></div>
+        <div class="balance">
+          Créditos <strong id="balance">0</strong>
+          <button id="logout" type="button">Salir</button>
+        </div>
+      </header>
+      <section class="hero">
+        <h1>Algo rico para hoy.</h1>
+        <p>
+          Un pequeño mercado para grandes antojos. Elige tus favoritos y arma tu
+          recreo.
+        </p>
+      </section>
+      <div class="layout">
+        <section class="items" id="items"></section>
+        <aside class="cart">
+          <h2>Tu pedido</h2>
+          <div id="cart"></div>
+          <div class="total">
+            <span>Total</span><span id="total">0 créditos</span>
+          </div>
+          <button class="checkout" id="checkout">Pagar pedido</button>
+          <div id="notice" class="notice hidden"></div>
+        </aside>
+      </div>
+    </main>
+    <script src="{{ url_for('static', filename='lonchera.js') }}"></script>
+  </body>
+</html>

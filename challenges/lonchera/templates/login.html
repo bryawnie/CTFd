@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Lonchera | Ingresar</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='lonchera.css') }}"
+    />
+  </head>
+  <body class="login-page">
+    <main class="login-panel">
+      <h1>Lonchera</h1>
+      <p>
+        ¿Tiempo de un break?. Crea una cuenta o vuelve a entrar para comenzar
+        con 1.000 créditos.
+      </p>
+      <form id="login">
+        <label
+          >Usuario
+          <input name="username" required minlength="3" autocomplete="username"
+        /></label>
+        <label
+          >Contraseña
+          <input
+            name="password"
+            type="password"
+            required
+            minlength="4"
+            autocomplete="current-password"
+        /></label>
+        <button type="submit">Entrar</button>
+      </form>
+      <p id="error" class="error"></p>
+    </main>
+    <script src="{{ url_for('static', filename='lonchera.js') }}"></script>
+  </body>
+</html>

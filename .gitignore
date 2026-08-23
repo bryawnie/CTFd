@@ -65,6 +65,8 @@ flask_profiler.sql
 .vscode/
 .*.swp
 .DS_Store
+.env
+!.env.example
 
 # Ruff
 .ruff_cache/

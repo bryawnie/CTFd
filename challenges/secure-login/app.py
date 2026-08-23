@@ -1,13 +1,14 @@
 import csv
 import hashlib
 import hmac
+import os
 from pathlib import Path
 
 from flask import Flask, render_template_string, request
 
 app = Flask(__name__)
 USERS_FILE = Path(__file__).with_name("users.csv")
-FLAG = "fukers{pls_d0_n0t_us3_th1s_passw0rd}"
+FLAG = os.environ["SECURE_LOGIN_FLAG"]
 
 PAGE = """<!doctype html>
 <html lang="en">

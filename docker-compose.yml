@@ -1,7 +1,22 @@
 services:
+  lonchera:
+    build: ./challenges/lonchera
+    restart: always
+    env_file:
+      - path: .env
+        required: false
+    cpus: 0.50
+    mem_limit: 128m
+    pids_limit: 64
+    networks:
+      challenge:
+
   secure-login:
     build: ./challenges/secure-login
     restart: always
+    env_file:
+      - path: .env
+        required: false
     cpus: 0.50
     mem_limit: 128m
     pids_limit: 64
@@ -57,6 +72,7 @@ services:
     depends_on:
       - ctfd
       - secure-login
+      - lonchera
     networks:
       default:
       challenge:

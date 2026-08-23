@@ -1,0 +1,98 @@
+[
+  {
+    "id": "galletas",
+    "name": "Galletas de avena",
+    "description": "Dulces, suaves y listas para abrir.",
+    "price": 45,
+    "emoji": "🍪",
+    "stock": null
+  },
+  {
+    "id": "jugo",
+    "name": "Jugo natural",
+    "description": "Una mezcla cítrica lista para tomar.",
+    "price": 80,
+    "emoji": "🧃",
+    "stock": null
+  },
+  {
+    "id": "chocolate",
+    "name": "Barra de chocolate",
+    "description": "Un clásico envuelto en papel brillante.",
+    "price": 110,
+    "emoji": "🍫",
+    "stock": null
+  },
+  {
+    "id": "sandwich",
+    "name": "Sandwich envasado",
+    "description": "Pan fresco, queso y algo crujiente.",
+    "price": 120,
+    "emoji": "🥪",
+    "stock": null
+  },
+  {
+    "id": "papas",
+    "name": "Papas fritas",
+    "description": "Crujientes, saladas y convenientemente individuales.",
+    "price": 150,
+    "emoji": "🍟",
+    "stock": null
+  },
+  {
+    "id": "ticket-humorista",
+    "name": "Ticket para ver a un humorista",
+    "description": "Una entrada. El chiste sobre el precio viene incluido.",
+    "price": 2500,
+    "emoji": "🎤",
+    "stock": null
+  },
+  {
+    "id": "entrada-cine",
+    "name": "Entrada al cine",
+    "description": "Una película, una butaca y cero spoilers.",
+    "price": 5000,
+    "emoji": "🎬",
+    "stock": null
+  },
+  {
+    "id": "audifonos",
+    "name": "Audífonos de emergencia",
+    "description": "Para escuchar música mientras esperas tu compra.",
+    "price": 12000,
+    "emoji": "🎧",
+    "stock": null
+  },
+  {
+    "id": "poleron-bimbo",
+    "name": "Polerón Bimbo",
+    "description": "Abrigo oficial para días de hambre y decisiones cuestionables.",
+    "price": 18000,
+    "emoji": "🧥",
+    "stock": null
+  },
+  {
+    "id": "lego-spiderman",
+    "name": "LEGO Spider-Man",
+    "description": "Arma tu propia escena de acción en 847 piezas.",
+    "price": 25000,
+    "emoji": "🕷️",
+    "stock": null
+  },
+  {
+    "id": "nintendo-switch-8",
+    "name": "Nintendo Switch 8",
+    "description": "La consola portátil de la próxima generación, disponible hoy.",
+    "price": 100000,
+    "emoji": "🎮",
+    "stock": null
+  },
+  {
+    "id": "flag",
+    "name": "La lonchera especial",
+    "description": "Una pieza única. Nadie sabe qué contiene.",
+    "price": 1000000,
+    "emoji": "🔒",
+    "stock": 1
+  }
+]

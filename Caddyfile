@@ -2,6 +2,10 @@ bukctf.tech {
     reverse_proxy ctfd:8000
 }
 
+lonchera.bukctf.tech {
+    reverse_proxy lonchera:8080
+}
+
 secure-login.bukctf.tech {
     reverse_proxy secure-login:8080
 }
