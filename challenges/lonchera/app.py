@@ -132,5 +132,3 @@ def checkout():
     return jsonify(credits=user["credits"], message="Pedido pagado. ¡Que lo disfrutes!")
 
 
-if __name__ == "__main__":
-    app.run(host="0.0.0.0", port=8080)
