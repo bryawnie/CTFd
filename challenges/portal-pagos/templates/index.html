@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Portal de pagos | BimFinance</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='portal.css') }}"
+    />
+  </head>
+  <body>
+    <main class="page-shell">
+      <section class="portal-card">
+        <header class="brand-row">
+          <div class="brand-mark">BF</div>
+          <div>
+            <p class="brand-name">BimFinance</p>
+            <p class="brand-caption">Portal de pagos empresariales</p>
+          </div>
+        </header>
+
+        <div class="rule"></div>
+
+        <section id="rut-screen" class="screen active">
+          <p class="eyebrow">Acceso a documentos</p>
+          <h1>Portal de cliente</h1>
+          <p class="lead">
+            Ingresa el RUT de la empresa para revisar y gestionar sus pagos.
+          </p>
+          <form id="rut-form" class="form-stack">
+            <label for="rut">RUT de la empresa</label>
+            <input
+              id="rut"
+              name="rut"
+              placeholder="76.123.456-0"
+              autocomplete="off"
+              maxlength="12"
+              inputmode="text"
+              required
+            />
+            <button class="primary-button" type="submit">Continuar</button>
+          </form>
+          <p id="rut-error" class="error" role="alert"></p>
+        </section>
+
+        <section id="code-screen" class="screen" hidden>
+          <p class="eyebrow">Verificación de seguridad</p>
+          <h1>Confirma tu acceso</h1>
+          <p class="lead">
+            Enviamos un código de verificación al correo
+            <strong id="company-email"></strong>.
+          </p>
+          <form id="code-form" class="code-panel">
+            <label>Ingresa tu código de verificación</label>
+            <div class="code-inputs" id="code-inputs">
+              <input
+                inputmode="numeric"
+                maxlength="1"
+                aria-label="Dígito 1"
+                required
+              />
+              <input
+                inputmode="numeric"
+                maxlength="1"
+                aria-label="Dígito 2"
+                required
+              />
+              <input
+                inputmode="numeric"
+                maxlength="1"
+                aria-label="Dígito 3"
+                required
+              />
+              <input
+                inputmode="numeric"
+                maxlength="1"
+                aria-label="Dígito 4"
+                required
+              />
+            </div>
+            <button class="primary-button" type="submit">
+              Confirmar código
+            </button>
+            <p id="code-error" class="error" role="alert"></p>
+          </form>
+          <button id="back-button" class="text-button" type="button">
+            Usar otro RUT
+          </button>
+        </section>
+
+        <section id="invoices-screen" class="screen" hidden>
+          <p class="eyebrow">Documentos pendientes</p>
+          <h1>Facturas por pagar</h1>
+          <p class="lead">Selecciona una factura para ver su detalle.</p>
+          <div id="invoice-list" class="invoice-list"></div>
+          <p id="invoice-message" class="invoice-message" role="status"></p>
+        </section>
+
+        <footer>Powered by <strong>BimFinance</strong></footer>
+      </section>
+    </main>
+    <script src="https://unpkg.com/rutjs@0.1.1/dist/rut.js"></script>
+    <script src="{{ url_for('static', filename='portal.js') }}"></script>
+  </body>
+</html>

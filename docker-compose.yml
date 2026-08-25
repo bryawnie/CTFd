@@ -23,6 +23,18 @@ services:
     networks:
       challenge:
 
+  portal-pagos:
+    build: ./challenges/portal-pagos
+    restart: always
+    env_file:
+      - path: .env
+        required: false
+    cpus: 0.50
+    mem_limit: 128m
+    pids_limit: 64
+    networks:
+      challenge:
+
   ctfd:
     build: .
     restart: always
@@ -73,6 +85,7 @@ services:
       - ctfd
       - secure-login
       - lonchera
+      - portal-pagos
     networks:
       default:
       challenge:

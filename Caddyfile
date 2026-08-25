@@ -9,3 +9,7 @@ lonchera.bukctf.tech {
 secure-login.bukctf.tech {
     reverse_proxy secure-login:8080
 }
+
+portal-pagos.bukctf.tech {
+    reverse_proxy portal-pagos:8080
+}
