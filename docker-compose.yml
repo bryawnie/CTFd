@@ -47,6 +47,18 @@ services:
     networks:
       challenge:
 
+  cobranza:
+    build: ./challenges/cobranza
+    restart: always
+    env_file:
+      - path: .env
+        required: false
+    cpus: 0.50
+    mem_limit: 128m
+    pids_limit: 64
+    networks:
+      challenge:
+
   geenie:
     build: ./challenges/geenie
     restart: always
@@ -114,6 +126,7 @@ services:
       - lonchera
       - portal-pagos
       - facebuk
+      - cobranza
     networks:
       default:
       challenge:

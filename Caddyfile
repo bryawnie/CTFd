@@ -17,3 +17,7 @@ portal-pagos.bukctf.tech {
 facebuk.bukctf.tech {
     reverse_proxy facebuk:8080
 }
+
+cobranza.bukctf.tech {
+    reverse_proxy cobranza:8080
+}
