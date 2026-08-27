@@ -7,4 +7,4 @@ if [ ! -f social.db ]; then
     python seed.py
 fi
 
-exec python app.py
+exec gunicorn --bind "0.0.0.0:${PORT:-8080}" app:app

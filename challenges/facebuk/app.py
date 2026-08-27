@@ -182,9 +182,3 @@ def descargar(filename):
 @app.errorhandler(404)
 def not_found(e):
     return render_template("404.html", username=None), 404
-
-
-if __name__ == "__main__":
-    # 5000 lo ocupa el receptor AirPlay en macOS, por eso 8000 por defecto.
-    puerto = int(os.environ.get("PORT", 8000))
-    app.run(host="0.0.0.0", port=puerto, debug=False)
