@@ -47,6 +47,21 @@ services:
     networks:
       challenge:
 
+  geenie:
+    build: ./challenges/geenie
+    restart: always
+    env_file:
+      - path: .env
+        required: false
+    ports:
+      - "5326:5326"
+      - "5327:5327"
+    cpus: 0.50
+    mem_limit: 128m
+    pids_limit: 64
+    networks:
+      challenge:
+
   ctfd:
     build: .
     restart: always
@@ -116,7 +131,14 @@ services:
       - .data/mysql:/var/lib/mysql
     networks:
       internal:
-    command: [mysqld, --character-set-server=utf8mb4, --collation-server=utf8mb4_unicode_ci, --wait_timeout=28800, --log-warnings=0]
+    command:
+      [
+        mysqld,
+        --character-set-server=utf8mb4,
+        --collation-server=utf8mb4_unicode_ci,
+        --wait_timeout=28800,
+        --log-warnings=0,
+      ]
 
   cache:
     image: redis:4
