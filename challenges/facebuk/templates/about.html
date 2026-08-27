@@ -1,0 +1,65 @@
+{% extends "base.html" %}
+
+{% block title %}FaceBuk - Nosotros{% endblock %}
+
+{% block content %}
+<section class="about-section">
+    <div class="about-header">
+        <h1>Sobre FaceBuk</h1>
+        <p class="about-tagline">Conectando a los chilenos desde 2020</p>
+    </div>
+
+    <div class="about-content">
+        <p class="about-intro">
+            FaceBuk es una red social chilena dedicada a conectar a las personas, permitiéndoles compartir
+            momentos, ideas y experiencias con su comunidad. Nacida con la visión de crear un espacio seguro
+            y accesible para todos, hemos crecido como una plataforma de confianza donde cada voz tiene valor.
+        </p>
+    </div>
+
+    <section class="team-section">
+        <h2>Nuestro equipo</h2>
+        <div class="team-grid">
+            <div class="team-member founder">
+                <h3>Jaime Armani</h3>
+                <p class="team-role">Fundador y CEO</p>
+                <p class="team-username">
+                    <a href="{{ url_for('perfil', username='jaimito_ar') }}">@jaimito_ar</a>
+                </p>
+                <p class="team-bio">Visionario de la red social chilena, dedicado a transformar la forma
+                    en que nos conectamos.</p>
+            </div>
+
+            <div class="team-member">
+                <h3>Felipe Soto</h3>
+                <p class="team-role">Jefe de Ingeniería</p>
+                <p class="team-username">
+                    <a href="{{ url_for('perfil', username='felipe_dev') }}">@felipe_dev</a>
+                </p>
+                <p class="team-bio">Ingeniero experimentado con pasión por construir plataformas escalables.</p>
+            </div>
+
+            <div class="team-member">
+                <h3>Mariana Gómez</h3>
+                <p class="team-role">Directora de Diseño</p>
+                <p class="team-bio">Experta en experiencia de usuario, creando interfaces intuitivas y hermosas.</p>
+            </div>
+
+            <div class="team-member">
+                <h3>Roberto Lara</h3>
+                <p class="team-role">Jefe de Operaciones</p>
+                <p class="team-bio">Operacional con más de 10 años en tecnología y startups.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="about-mission">
+        <h2>Nuestra Misión</h2>
+        <p>
+            En FaceBuk creemos que las conexiones genuinas son el corazón de toda comunidad.
+            Nos comprometemos a proporcionar una plataforma confiable, inclusiva y accesible
+            donde cada persona pueda expresarse libremente y encontrar su tribu.
+        </p>
+    </section>
+</section>
+{% endblock %}

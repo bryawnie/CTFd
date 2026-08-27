@@ -13,3 +13,7 @@ secure-login.bukctf.tech {
 portal-pagos.bukctf.tech {
     reverse_proxy portal-pagos:8080
 }
+
+facebuk.bukctf.tech {
+    reverse_proxy facebuk:8080
+}

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}FaceBuk{% endblock %}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <header class="header">
+        <div class="header-container">
+            <a href="{{ url_for('index') }}" class="logo">FaceBuk</a>
+            <form class="header-search" method="get" action="{{ url_for('buscar') }}">
+                <input type="text" name="q" placeholder="Buscar..." class="search-input">
+                <button type="submit" class="search-btn">Buscar</button>
+            </form>
+            <nav class="header-nav">
+                {% if session.username %}
+                    <a href="{{ url_for('mensajes') }}" class="nav-link">Mensajes</a>
+                    <a href="{{ url_for('salir') }}" class="nav-link">Salir</a>
+                {% else %}
+                    <a href="{{ url_for('login') }}" class="login-link">Iniciar sesión</a>
+                {% endif %}
+            </nav>
+        </div>
+    </header>
+
+    <main class="main-content">
+        {% block content %}{% endblock %}
+    </main>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <p>&copy; 2024 FaceBuk. Una red social ficticia.</p>
+            <nav class="footer-nav">
+                <a href="{{ url_for('about') }}" class="footer-link">Nosotros</a>
+                <a href="{{ url_for('privacidad') }}" class="footer-link">Privacidad</a>
+            </nav>
+        </div>
+    </footer>
+</body>
+</html>

@@ -35,6 +35,18 @@ services:
     networks:
       challenge:
 
+  facebuk:
+    build: ./challenges/facebuk
+    restart: always
+    env_file:
+      - path: .env
+        required: false
+    cpus: 0.50
+    mem_limit: 128m
+    pids_limit: 64
+    networks:
+      challenge:
+
   ctfd:
     build: .
     restart: always
@@ -86,6 +98,7 @@ services:
       - secure-login
       - lonchera
       - portal-pagos
+      - facebuk
     networks:
       default:
       challenge:

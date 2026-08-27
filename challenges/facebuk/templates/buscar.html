@@ -1,0 +1,53 @@
+{% extends "base.html" %}
+
+{% block title %}Buscar - FaceBuk{% endblock %}
+
+{% block content %}
+<section class="search-section">
+    {% if q %}
+        <div class="search-header">
+            <h1>Resultados para «{{ q }}»</h1>
+            {% if resultados %}
+                <p class="result-count">{{ resultados|length }} resultado{{ resultados|length != 1 and 's' or '' }}</p>
+            {% endif %}
+        </div>
+
+        {% if resultados %}
+            <div class="search-results">
+                {% for user in resultados %}
+                <article class="result-card">
+                    <a href="{{ url_for('perfil', username=user.username) }}" class="result-link">
+                        <div class="result-avatar" style="background: hsl({{ user.avatar_hue }}, 65%, 55%)">
+                            {{ user.display_name[0]|upper }}
+                        </div>
+                        <div class="result-content">
+                            <h3 class="result-name">
+                                {{ user.display_name }}
+                                {% if user.verified %}
+                                <span class="verified-badge">✓</span>
+                                {% endif %}
+                            </h3>
+                            <p class="result-username">@{{ user.username }}</p>
+                            {% if user.bio %}
+                            <p class="result-bio">{{ user.bio }}</p>
+                            {% endif %}
+                            {% if user.location %}
+                            <p class="result-location">📍 {{ user.location }}</p>
+                            {% endif %}
+                        </div>
+                    </a>
+                </article>
+                {% endfor %}
+            </div>
+        {% else %}
+            <div class="empty-state">
+                <p>No se encontraron resultados para «{{ q }}».</p>
+            </div>
+        {% endif %}
+    {% else %}
+        <div class="empty-state">
+            <p>Ingresa un término de búsqueda para encontrar perfiles.</p>
+        </div>
+    {% endif %}
+</section>
+{% endblock %}

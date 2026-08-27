@@ -1,0 +1,51 @@
+{% extends "base.html" %}
+
+{% block title %}Mensajes - FaceBuk{% endblock %}
+
+{% block content %}
+<article class="messages-page">
+    <div class="messages-header">
+        <h1>Mensajes</h1>
+    </div>
+
+    {% if conversaciones %}
+        <div class="conversations-list">
+            {% for conv in conversaciones %}
+            <div class="conversation-card">
+                <div class="conversation-header">
+                    <div class="conversation-peer-avatar" style="background: hsl({{ conv.peer_hue }}, 65%, 55%)">
+                        {{ conv.peer_display_name[0]|upper }}
+                    </div>
+                    <div class="conversation-peer-info">
+                        <a href="{{ url_for('perfil', username=conv.peer_username) }}" class="conversation-peer-link">
+                            <span class="conversation-peer-name">{{ conv.peer_display_name }}</span>
+                            <span class="conversation-peer-username">@{{ conv.peer_username }}</span>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="messages-transcript">
+                    {% for m in conv.mensajes %}
+                    <div class="message-bubble message-{{ m.direction }}">
+                        <div class="message-body">{{ m.body }}</div>
+                        {% if m.attachment %}
+                        <div class="message-attachment">
+                            <span class="attachment-icon">📎</span>
+                            <span class="attachment-filename">{{ m.attachment }}</span>
+                            <a href="{{ url_for('descargar', filename=m.attachment) }}" class="attachment-download">Descargar</a>
+                        </div>
+                        {% endif %}
+                        <div class="message-time">{{ m.created_at }}</div>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    {% else %}
+        <div class="empty-state">
+            <p>No tienes mensajes.</p>
+        </div>
+    {% endif %}
+</article>
+{% endblock %}

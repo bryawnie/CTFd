@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% block title %}Página no encontrada - FaceBuk{% endblock %}
+
+{% block content %}
+<div class="not-found-container">
+    <div class="not-found-card">
+        {% if username %}
+            <h1>Perfil no encontrado</h1>
+            <p>No existe un perfil con el usuario «@{{ username }}».</p>
+        {% else %}
+            <h1>Página no encontrada</h1>
+            <p>La página que buscas no existe.</p>
+        {% endif %}
+        <a href="{{ url_for('index') }}" class="back-link">Volver al inicio</a>
+    </div>
+</div>
+{% endblock %}

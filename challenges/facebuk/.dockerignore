@@ -1,0 +1,12 @@
+.git
+.gitignore
+.venv
+__pycache__
+*.pyc
+.claude
+social.db
+private/
+handout/
+README.md
+Dockerfile
+.dockerignore

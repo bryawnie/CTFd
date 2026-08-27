@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+
+{% block title %}FaceBuk - Inicio{% endblock %}
+
+{% block content %}
+<div class="hero">
+    <div class="hero-content">
+        <h1>Bienvenido a FaceBuk</h1>
+        <p>Conecta con tu gente, comparte lo que estás viviendo.</p>
+        <form class="hero-search" method="get" action="{{ url_for('buscar') }}">
+            <input type="text" name="q" placeholder="Buscar perfiles..." class="hero-search-input">
+            <button type="submit" class="hero-search-btn">Buscar</button>
+        </form>
+        <p class="profile-count">{{ total }} perfiles</p>
+    </div>
+</div>
+
+<section class="profiles-section">
+    <h2>Perfiles destacados</h2>
+    <div class="profiles-grid">
+        {% for user in destacados %}
+        <article class="profile-card">
+            <a href="{{ url_for('perfil', username=user.username) }}" class="profile-card-link">
+                <div class="avatar" style="background: hsl({{ user.avatar_hue }}, 65%, 55%)">
+                    {{ user.display_name[0]|upper }}
+                </div>
+                <div class="profile-card-content">
+                    <h3 class="display-name">
+                        {{ user.display_name }}
+                        {% if user.verified %}
+                        <span class="verified-badge">✓</span>
+                        {% endif %}
+                    </h3>
+                    <p class="username">@{{ user.username }}</p>
+                    {% if user.bio %}
+                    <p class="bio">{{ user.bio }}</p>
+                    {% endif %}
+                    {% if user.location %}
+                    <p class="location">📍 {{ user.location }}</p>
+                    {% endif %}
+                </div>
+            </a>
+        </article>
+        {% endfor %}
+    </div>
+</section>
+{% endblock %}

@@ -1,0 +1,72 @@
+{% extends "base.html" %}
+
+{% block title %}@{{ user.username }} - FaceBuk{% endblock %}
+
+{% block content %}
+<article class="profile-page">
+    <div class="profile-header">
+        <div class="cover-banner" style="background: linear-gradient(135deg, hsl({{ user.avatar_hue }}, 65%, 55%), hsl({{ (user.avatar_hue + 30) % 360 }}, 65%, 55%))"></div>
+        <div class="profile-hero">
+            <div class="profile-avatar" style="background: hsl({{ user.avatar_hue }}, 65%, 55%)">
+                {{ user.display_name[0]|upper }}
+            </div>
+            <div class="profile-info">
+                <h1 class="profile-name">
+                    {{ user.display_name }}
+                    {% if user.verified %}
+                    <span class="verified-badge">✓</span>
+                    {% endif %}
+                </h1>
+                <p class="profile-username">@{{ user.username }}</p>
+                {% if user.bio %}
+                <p class="profile-bio">{{ user.bio }}</p>
+                {% endif %}
+                <div class="profile-meta">
+                    {% if user.location %}
+                    <span class="profile-location">📍 {{ user.location }}</span>
+                    {% endif %}
+                    <span class="profile-joined">Se unió en {{ user.joined }}</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="profile-body">
+        <aside class="profile-sidebar">
+            {% if facts %}
+            <div class="facts-card">
+                <h3>Detalles</h3>
+                <dl class="facts-list">
+                    {% for fact in facts %}
+                    <div class="fact-item">
+                        <dt class="fact-label">{{ fact.label }}</dt>
+                        <dd class="fact-value">{{ fact.value }}</dd>
+                    </div>
+                    {% endfor %}
+                </dl>
+            </div>
+            {% endif %}
+        </aside>
+
+        <section class="profile-main">
+            {% if posts %}
+                {% for post in posts %}
+                <article class="post-card">
+                    <div class="post-content">
+                        {{ post.content }}
+                    </div>
+                    <div class="post-meta">
+                        <span class="post-date">{{ post.created_at }}</span>
+                        <span class="post-likes">❤️ {{ post.likes }}</span>
+                    </div>
+                </article>
+                {% endfor %}
+            {% else %}
+                <div class="empty-state">
+                    <p>Este perfil no tiene posts aún.</p>
+                </div>
+            {% endif %}
+        </section>
+    </div>
+</article>
+{% endblock %}
