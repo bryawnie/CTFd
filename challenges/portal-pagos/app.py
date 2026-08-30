@@ -120,5 +120,3 @@ def invoice_detail(invoice_id):
     if invoice_id != 2:
         return jsonify(message="Detalle de factura disponible.")
     return jsonify(message=f"Factura con premio! {FLAG}")
-
-

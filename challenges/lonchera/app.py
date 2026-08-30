@@ -130,5 +130,3 @@ def checkout():
     if normalized.get("flag", 0) > 0:
         return jsonify(credits=user["credits"], message=f"Pedido pagado. Tu premio es: {FLAG}")
     return jsonify(credits=user["credits"], message="Pedido pagado. ¡Que lo disfrutes!")
-
-

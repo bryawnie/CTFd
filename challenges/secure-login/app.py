@@ -236,5 +236,3 @@ def index():
         else:
             message = "Invalid credentials."
     return render_template_string(PAGE, message=message)
-
-
