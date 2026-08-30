@@ -80,9 +80,6 @@ CTFd/uploads
 *.log
 *.log.*
 
-# CTFd exports
-*.zip
-
 # non-default plugins
 CTFd/plugins/*
 !CTFd/plugins/challenges/
